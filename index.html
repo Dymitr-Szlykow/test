@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/styles.css" />
+</head>
+<body>
+
+    <div class="background"></div>
+    <div class="overlay"></div>
+
+    <div class="page__container">
+
+        <h1 class="page__header">Hello</h1>
+
+        <!-- <div class="form__container"> -->
+            <form class="form__container" method="post">
+                <h4 class="form__header">For business enquiries please use the form below</h4>
+                <p class="form__legend">
+                    <span class="required">Required</span>
+                </p>
+                <div class="form__input">
+                    <input type="text" class="form__input-box" id="name" />
+                    <label for="name" class="form__required">Name</label>
+                </div>
+                <div class="form__input">
+                    <input type="text" class="form__input-box" id="company" />
+                    <label for="company" class="form__required">Company</label>
+                </div>
+                <div class="form__input">
+                    <input type="text" class="form__input-box" id="email" />
+                    <label for="email" class="form__required">E-mail</label>
+                </div>
+                <div class="form__input">
+                    <input type="text" class="form__input-box" id="phone" />
+                    <label for="phone">Phone</label>
+                </div>
+                <div class="form__input">
+                    <input type="text" class="form__input-box" id="subject" />
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="form__input">
+                    <!-- <input type="text" id="message" /> -->
+                    <textarea name="message" class="form__input-box" id="message">But I must explain to you how all this mistaken idea of denouncing</textarea>
+                    <label for="message" class="form__required">Message</label>
+                </div>
+                <div class="form__accept-policy">
+                    <div class="form__policy-checkbox">
+                        <input type="checkbox" class="form__policy-checkbox" id="accept-policy" />
+                        <label for="accept-policy" class="form__policy-checkbox"></label>
+                    </div>
+                    <label for="accept-policy" class="form__accept-policy-prompt">
+                        I accept <a href="#" class="form__accept-policy-prompt">Terms and Privacy Policy</a>
+                    </label>
+                </div>
+                <button type="confirm" class="form__confirm-btn" id="confirm">Send</button>
+            </form>
+        <!-- </div> -->
+    </div>
+    
+</body>
+</html>

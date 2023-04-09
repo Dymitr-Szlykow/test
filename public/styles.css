@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap");
+
+:root {
+    /* dark shades of primary color*/
+    --clr-background-dark: #171929;
+    --clr-background-light: #2C2F47;
+    --clr-border: #3F4363;
+    --clr-text-white: #FFFFFF;
+    --clr-text-dimmed: #797EA3;
+    --clr-text-dimmed-link: #B9BEE5;
+
+    --ff-primary: "Roboto", sans-serif;
+    --transition: all 0.3s linear;
+    --spacing: 0.1rem;
+    --radius: 0.25rem;
+    --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    --max-width: 1170px;
+    --fixed-width: 620px;
+}
+
+/* mobile, iPad */
+@media (max-width: 479px) {
+	:root {
+		--fs-h1: 2rem;
+		--fs-h4: 1rem;
+		--fs-body: 1rem;
+        --width-content: 80vw;
+	}
+}
+
+/* tablet, laptop, small screen desktop */
+@media (min-width: 480px) and (max-width: 1023px) {
+	:root {
+		--fs-h1: 2.5rem;
+		--fs-h4: 1.25rem;
+		--fs-body: 1rem;
+        --width-content: 380px;
+	}
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+	:root {
+		--fs-h1: 3.5rem;
+		--fs-h4: 1.40rem;
+		--fs-body: 1.125rem;
+        --width-content: 389px;
+	}
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:focus {
+	outline: none;
+}
+
+body {
+    font-family: var(--ff-primary) !important;
+    color: var(--clr-text-white);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+    text-shadow: 0px 4px 19px rgba(0, 0, 0, 0.97);
+}
+
+h4 {
+    font-size: var(--fs-body);
+}
+
+/*  c o n t a i n e r  */
+
+.background {
+    height: 100vh;
+    width: 100vw;
+    background: url(./cosmos-1845140_1920\ 1.png) center;
+    background-size: cover;
+    position: absolute;
+    z-index: -20;
+}
+
+.overlay {
+    height: 100vh;
+    width: 100vw;
+    background-color: #000000;
+    opacity: 0.3;
+    position: absolute;
+    z-index: -10;
+}
+
+.page__container {
+    min-height: 100vh;
+    width: var(--width-content);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-content: center;
+}
+
+.page__header {
+    margin: 1.2em 0 .4em;
+    text-align: center;
+    font-weight: 500;
+}
+
+.form__container {
+    margin: 0 auto;
+    padding: 1rem 2.5em;
+    border-radius: 1em;
+    background-color: var(--clr-background-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/*  f o r m  */
+
+.form__header {
+    margin: 1em auto .4em;
+    padding: 0 1.5em;
+    /* width: 80%; */
+    text-align: center;
+    font-weight: 400;
+}
+
+.form__legend {
+    width: 50%;
+    text-align: center;
+    font-size: .9rem;
+    color: var(--clr-text-dimmed);
+}
+
+.required::before {
+    display: inline;
+    content: "* ";
+    color: var(--clr-border);
+}
+
+.form__input {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.form__input label {
+    display: block;
+    color: var(--clr-text-dimmed);
+    font-weight: 300;
+    transition: color .2s linear;
+}
+
+.form__input-box {
+    display: block;
+    width: 100%;
+    padding: .3em 0;
+    border: none;
+    border-bottom: 1px solid var(--clr-border);
+    background: transparent;
+    color: var(--clr-text-white);
+    font-family: var(--ff-primary);
+    font-size: 1.2rem;
+    font-weight: 300;
+    transition: border .2s linear;
+}
+
+textarea.form__input-box {
+    min-height: 1.3em;
+    max-height: 5.3em;
+    resize: none;
+}
+
+.form__input:hover label,
+.form__input-box:focus ~ label {
+    color: var(--clr-text-white);
+}
+
+.form__input:hover .form__input-box,
+.form__input-box:focus {
+    border-color: var(--clr-text-white);
+}
+
+.form__required::after {
+    display: inline;
+    content: "*";
+    color: var(--clr-border);
+}
+
+/* form - accept policy checkbox */
+
+.form__accept-policy {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.form__policy-checkbox {
+    display: inline-block;
+    flex: 0 1.5rem;
+    width: 2rem;
+    height: 1.7rem;
+    border: 1px solid transparent;
+    border-radius: 15%;
+    background: var(--clr-background-light);
+    transition: all .2s linear;
+}
+
+div.form__policy-checkbox:hover {
+    border-color: var(--clr-text-dimmed-link);
+}
+
+label.form__policy-checkbox {
+    display: block;
+    width: 80%;
+    height: 80%;
+    margin: 0;
+    position: relative;
+    top: 25%;
+    left: 15%;
+    opacity: 0;
+    background: url(./Vector.svg) no-repeat;
+    background-size: contain;
+    transition: all .1s linear;
+}
+
+input.form__policy-checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+input#accept-policy:checked ~ label {
+    opacity: 1;
+} 
+
+label.form__accept-policy-prompt {
+    width: calc(100% - 1.5rem);
+    padding: 0 .5em;
+    color: var(--clr-text-dimmed);
+    font-weight: 300;
+}
+
+a.form__accept-policy-prompt {
+    color: var(--clr-text-dimmed-link)
+}
+
+/* form - confirm button */
+
+.form__confirm-btn {
+    background-color: var(--clr-background-light);
+    width: 40%;
+    height: 2em;
+    margin: 1.5em auto 1em;
+    padding: .4em 1em;
+    border: 1px solid transparent;
+    border-radius: 2rem;
+    color: var(--clr-text-white);
+    opacity: 0.7;
+    font-size: var(--fs-body);
+    font-weight: 400;
+    transition: border .2s linear;
+    transition: background-color .1s linear;
+}
+
+.form__confirm-btn:hover {
+    border-color: var(--clr-text-white);
+}
+
+.form__confirm-btn:active {
+    background-color: var(--clr-text-dimmed-link);
+}
